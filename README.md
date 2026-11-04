@@ -23,9 +23,7 @@ backend/
 ├── app/
 │   ├── main.py              # FastAPI app, todas as rotas e modelos Pydantic
 │   ├── chat_service.py      # orquestra retrieval (ai_engine.client) + geração
-│   ├── config.py            # Settings do backend (armazenamento de documentos)
-│   └── interface/
-│       └── streamlit_app.py # interface alternativa de debug (não é o produto)
+│   └── config.py            # Settings do backend (armazenamento de documentos)
 ├── taxation/                 # calculadoras tributárias determinísticas
 ├── accounting/                # calculadoras contábeis determinísticas
 ├── documents/                 # upload/extração/análise de documentos do usuário
@@ -129,13 +127,6 @@ PYTHONPATH="../ai-engine" uvicorn app.main:app --reload
 Depois de subir: `POST http://localhost:8000/chat` com
 `{"question": "O que é o IBS?"}`, ou abra `http://localhost:8000/docs`.
 
-### Interface Streamlit (alternativa de debug)
-
-```powershell
-$env:PYTHONPATH = ".;../ai-engine"
-streamlit run app/interface/streamlit_app.py
-```
-
 ## Testes
 
 ```powershell
@@ -159,10 +150,6 @@ e o Ollama de pé (ver `../README.md`, seção "Limitações conhecidas").
   não suporta múltiplos processos escrevendo ao mesmo tempo, e não tem
   controle de concorrência. Suficiente para um único usuário local; não é
   adequado para produção multi-usuário.
-- `app/interface/streamlit_app.py` é uma ferramenta de debug interna,
-  redundante com o frontend Next.js real (`../frontend/`). Seu destino
-  (manter ou remover) ainda não foi decidido — ver
-  `../docs/architecture/AUDIT_REPORT.md`.
 - Não há autenticação/autorização nem conceito de usuário/empresa — todas
   as rotas são públicas, pensadas para uso local de um único usuário.
 - `taxation/` não cobre ISS/ICMS (variam por município/estado) e o Lucro
