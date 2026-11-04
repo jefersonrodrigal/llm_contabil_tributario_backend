@@ -1,0 +1,42 @@
+# ---- MVP: RAG + chat (Fases 1-4) ----
+# Core
+pydantic>=2.6
+pydantic-settings>=2.2
+python-dotenv>=1.0
+PyYAML>=6.0
+
+# Backend / API
+fastapi>=0.110
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9
+
+# Interface
+streamlit>=1.33
+
+# RAG: extração, chunking, embeddings, vector store
+requests>=2.31
+beautifulsoup4>=4.12
+lxml>=5.2
+PyMuPDF>=1.24
+sentence-transformers>=2.7
+chromadb>=0.5
+rank-bm25>=0.2.2
+
+# HTTP client para o Ollama
+httpx>=0.27
+
+# Documentos (Fase 7): extração de texto por tipo de arquivo
+python-docx>=1.1
+openpyxl>=3.1
+
+# Testes
+pytest>=8.2
+
+# ---- Fase 6 (fine-tuning) — instalar apenas quando chegar essa fase ----
+# torch>=2.2
+# transformers>=4.41
+# datasets>=2.19
+# peft>=0.11
+# trl>=0.9
+# accelerate>=0.30
+# bitsandbytes>=0.43

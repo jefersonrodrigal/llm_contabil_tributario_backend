@@ -1,0 +1,35 @@
+# Bytecode / cache (já cobertos pelo .gitignore da raiz, repetidos aqui
+# para o caso de backend/ vir a ser extraído como repositório próprio)
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Ambiente virtual, caso alguém crie um local dentro de backend/
+# (o oficial do projeto é ../.venv, na raiz)
+.venv/
+venv/
+
+# Variáveis de ambiente locais
+.env
+.env.local
+
+# Cobertura de testes
+.coverage
+.coverage.*
+htmlcov/
+
+# Empacotamento
+*.egg-info/
+build/
+dist/
+
+# Dados de runtime que não devem ir para o Git mesmo se algum dia
+# passarem a viver dentro de backend/ (hoje ficam em ../database/)
+*.db
+*.sqlite3
+
+# SO / editor
+.DS_Store
+Thumbs.db
