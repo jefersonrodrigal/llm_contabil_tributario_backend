@@ -10,9 +10,6 @@ fastapi>=0.110
 uvicorn[standard]>=0.29
 python-multipart>=0.0.9
 
-# Interface
-streamlit>=1.33
-
 # RAG: extração, chunking, embeddings, vector store
 requests>=2.31
 beautifulsoup4>=4.12
